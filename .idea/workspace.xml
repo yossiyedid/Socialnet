@@ -2,34 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="429ed5ac-9fc2-4886-acf0-a024a8e95216" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/socialnet-backend/Helpers/authHelper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/socialnet-backend/controllers/posts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/socialnet-backend/models/postsModels.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/socialnet-backend/routes/postRoutes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/socialnet-backend/socket/streams.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialnet-backend/controllers/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/socialnet-backend/controllers/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialnet-backend/models/userModels.js" beforeDir="false" afterPath="$PROJECT_DIR$/socialnet-backend/models/userModels.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialnet-backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/socialnet-backend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialnet-backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/socialnet-backend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialnet-backend/routes/authRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/socialnet-backend/routes/authRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialnet-backend/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/socialnet-backend/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialnet-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/socialnet-frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialnet-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/socialnet-frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialnet-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/socialnet-frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialnet-frontend/src/app/components/post-form/post-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/socialnet-frontend/src/app/components/post-form/post-form.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialnet-frontend/src/app/components/post-form/post-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/socialnet-frontend/src/app/components/post-form/post-form.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialnet-frontend/src/app/components/posts/posts.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/socialnet-frontend/src/app/components/posts/posts.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socialnet-backend/controllers/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/socialnet-backend/controllers/posts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socialnet-backend/routes/postRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/socialnet-backend/routes/postRoutes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/socialnet-frontend/src/app/components/posts/posts.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/socialnet-frontend/src/app/components/posts/posts.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/socialnet-frontend/src/app/components/posts/posts.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/socialnet-frontend/src/app/components/posts/posts.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialnet-frontend/src/app/components/streams/streams.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/socialnet-frontend/src/app/components/streams/streams.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialnet-frontend/src/app/components/toolbar/toolbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/socialnet-frontend/src/app/components/toolbar/toolbar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialnet-frontend/src/app/components/toolbar/toolbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/socialnet-frontend/src/app/components/toolbar/toolbar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialnet-frontend/src/app/modules/streams.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/socialnet-frontend/src/app/modules/streams.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialnet-frontend/src/app/services/token.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/socialnet-frontend/src/app/services/token.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/socialnet-frontend/src/polyfills.ts" beforeDir="false" afterPath="$PROJECT_DIR$/socialnet-frontend/src/polyfills.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socialnet-frontend/src/app/services/post.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/socialnet-frontend/src/app/services/post.service.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -57,37 +35,37 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="13" />
-          <entry key="html" value="15" />
-          <entry key="js" value="33" />
+          <entry key="html" value="16" />
+          <entry key="js" value="35" />
           <entry key="json" value="2" />
-          <entry key="ts" value="46" />
+          <entry key="ts" value="47" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="13" />
-          <entry key="HTML" value="15" />
+          <entry key="HTML" value="16" />
           <entry key="JSON" value="2" />
-          <entry key="JavaScript" value="33" />
-          <entry key="TypeScript" value="46" />
+          <entry key="JavaScript" value="35" />
+          <entry key="TypeScript" value="47" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="69" />
-          <entry key="html" value="1951" />
-          <entry key="js" value="5250" />
+          <entry key="html" value="1970" />
+          <entry key="js" value="5552" />
           <entry key="json" value="6" />
-          <entry key="ts" value="3050" />
+          <entry key="ts" value="3212" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="69" />
-          <entry key="HTML" value="1951" />
+          <entry key="HTML" value="1970" />
           <entry key="JSON" value="6" />
-          <entry key="JavaScript" value="5250" />
-          <entry key="TypeScript" value="3050" />
+          <entry key="JavaScript" value="5552" />
+          <entry key="TypeScript" value="3212" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -104,10 +82,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/socialnet-backend/server.js">
+        <entry file="file://$PROJECT_DIR$/socialnet-backend/routes/postRoutes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="55" column="38" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="38" />
+            <state relative-caret-position="180">
+              <caret line="10" column="70" selection-start-line="10" selection-start-column="63" selection-end-line="10" selection-end-column="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/socialnet-backend/controllers/posts.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="366">
+              <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/socialnet-frontend/src/app/services/post.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="18" column="34" lean-forward="true" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -115,11 +111,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/socialnet-frontend/src/app/components/posts/posts.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="402">
+              <caret line="38" column="35" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/socialnet-frontend/src/app/components/posts/posts.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -185,14 +190,14 @@
         <option value="$PROJECT_DIR$/socialnet-frontend/src/app/components/toolbar/toolbar.component.ts" />
         <option value="$PROJECT_DIR$/socialnet-frontend/src/app/components/toolbar/toolbar.component.html" />
         <option value="$PROJECT_DIR$/socialnet-frontend/src/app/components/posts/posts.component.css" />
-        <option value="$PROJECT_DIR$/socialnet-backend/routes/postRoutes.js" />
-        <option value="$PROJECT_DIR$/socialnet-backend/controllers/posts.js" />
-        <option value="$PROJECT_DIR$/socialnet-frontend/src/app/services/post.service.ts" />
-        <option value="$PROJECT_DIR$/socialnet-frontend/src/app/components/posts/posts.component.html" />
         <option value="$PROJECT_DIR$/socialnet-backend/server.js" />
         <option value="$PROJECT_DIR$/socialnet-frontend/src/polyfills.ts" />
         <option value="$PROJECT_DIR$/socialnet-frontend/src/app/components/post-form/post-form.component.ts" />
         <option value="$PROJECT_DIR$/socialnet-backend/socket/streams.js" />
+        <option value="$PROJECT_DIR$/socialnet-frontend/src/app/components/posts/posts.component.html" />
+        <option value="$PROJECT_DIR$/socialnet-backend/routes/postRoutes.js" />
+        <option value="$PROJECT_DIR$/socialnet-backend/controllers/posts.js" />
+        <option value="$PROJECT_DIR$/socialnet-frontend/src/app/services/post.service.ts" />
         <option value="$PROJECT_DIR$/socialnet-frontend/src/app/components/posts/posts.component.ts" />
       </list>
     </option>
@@ -334,6 +339,18 @@
               <item name="socialnet" type="b2602c69:ProjectViewProjectNode" />
               <item name="socialnet" type="462c0819:PsiDirectoryNode" />
               <item name="socialnet-backend" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="socialnet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="socialnet" type="462c0819:PsiDirectoryNode" />
+              <item name="socialnet-backend" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="socialnet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="socialnet" type="462c0819:PsiDirectoryNode" />
+              <item name="socialnet-backend" type="462c0819:PsiDirectoryNode" />
               <item name="socket" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -464,12 +481,12 @@
       <workItem from="1540735166929" duration="4334000" />
       <workItem from="1540804912813" duration="681000" />
       <workItem from="1540805615646" duration="128000" />
-      <workItem from="1540825819604" duration="9178000" />
+      <workItem from="1540825819604" duration="10820000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42179000" />
+    <option name="totallyTimeSpent" value="43821000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -482,9 +499,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49904397" visible="true" weight="0.24528302" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49904397" visible="true" weight="0.24528302" />
       <window_info id="Structure" order="1" sideWeight="0.500956" side_tool="true" weight="0.24900925" />
       <window_info id="Favorites" order="2" sideWeight="0.500956" side_tool="true" weight="0.24900925" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -496,7 +512,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32947975" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49967468" visible="true" weight="0.23636363" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49967468" visible="true" weight="0.23636363" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5003253" side_tool="true" weight="0.23636363" />
       <window_info anchor="bottom" id="TypeScript" order="11" weight="0.32947975" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -776,20 +792,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/socialnet-backend/routes/postRoutes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="65" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/socialnet-backend/controllers/posts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="55" column="45" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/socialnet-frontend/src/app/modules/streams.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -797,20 +799,6 @@
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/socialnet-frontend/src/app/services/post.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/socialnet-frontend/src/app/components/posts/posts.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -842,10 +830,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/socialnet-frontend/src/app/components/posts/posts.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/socialnet-backend/routes/postRoutes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="70" selection-start-line="10" selection-start-column="63" selection-end-line="10" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/socialnet-backend/controllers/posts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/socialnet-frontend/src/app/services/post.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="18" column="34" lean-forward="true" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/socialnet-frontend/src/app/components/posts/posts.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="402">
+          <caret line="38" column="35" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>

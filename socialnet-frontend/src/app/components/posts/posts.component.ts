@@ -33,4 +33,10 @@ export class PostsComponent implements OnInit {
   timeFromNow(time) {
     return moment(time).fromNow();
   }
+
+  likePost(post) {
+    this.postService.addLike(post).subscribe(data => {
+      this.socket.emit('refresh', {});
+    });
+  }
 }
