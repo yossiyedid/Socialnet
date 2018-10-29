@@ -10,6 +10,9 @@ app.use(cors());
 
 const dbConfig = require("./config/secret");
 
+const server =require('http').createServer(app);
+const io =require('socket.io').listen(server);
+
 app.use(function(req, res, next) {
   // Website you wish to allow to connect
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -41,9 +44,14 @@ mongoose.connect(
   { useNewUrlParser: true }
 );
 
-const auth = require("./routes/authRoutes");
-app.use("/api/socialnet", auth);
+require('./socket/streams')(io);
 
-app.listen(3000, () => {
+const auth = require("./routes/authRoutes");
+const posts = require("./routes/postRoutes");
+
+app.use("/api/socialnet", auth);
+app.use("/api/socialnet", posts);
+
+server.listen(3000, () => {
   console.log("Running on port 3000");
 });
