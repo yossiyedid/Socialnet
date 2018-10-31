@@ -10,18 +10,22 @@
   <div class="row">
     <div class="col s12">
       <div class="card">
-        <div class="card-image">
-          <img class="postImage" src="http://placehold.it/50x50">
-        </div>
+        <!--<div class="card-image">-->
+          <!--<img class="postImage" src="http://placehold.it/50x50">-->
+        <!--</div>-->
         <div class="card-content">
           <p>{{post.post}}</p>
         </div>
         <div class="card-action">
-          <i (click)="likePost(post)" class="material-icons">thumb_up</i>
+          <i (click)="likePost(post)"
+             [ngClass]="(!checkInLikesArray(post.likes, user.username)) ? 'notLiked' : 'liked'"
+             class="material-icons">thumb_up</i>
           <span class="iconSpan">
             {{post.totalLikes}}
           </span>
-          <i class="material-icons">chat</i>
+          <i class="material-icons"
+             [ngClass]="(!checkInLikesArray(post.comments, user.username)) ? 'notLiked' : 'liked'"
+             (click)="openCommentBox(post)">chat</i>
           <span class="iconSpan">
             {{post.comments.length}}
           </span>
