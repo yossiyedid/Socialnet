@@ -48,9 +48,13 @@ require('./socket/streams')(io);
 
 const auth = require("./routes/authRoutes");
 const posts = require("./routes/postRoutes");
+const users = require("./routes/userRoutes");
+const friends = require("./routes/friendsRoutes");
 
 app.use("/api/socialnet", auth);
 app.use("/api/socialnet", posts);
+app.use("/api/socialnet", users);
+app.use("/api/socialnet", friends);
 
 server.listen(3000, () => {
   console.log("Running on port 3000");

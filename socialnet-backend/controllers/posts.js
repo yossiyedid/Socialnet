@@ -46,10 +46,17 @@ module.exports = {
 
   async GetAllPosts(req, res) {
     try {
+      const top = await Post.find({ totalLikes: { $gte: 2 } })
+        .populate("user")
+        .sort({ created: -1 });
+
       const posts = await Post.find({})
         .populate("user")
         .sort({ created: -1 });
-      return res.status(HttpStatus.OK).json({ message: "All posts", posts });
+
+      return res
+        .status(HttpStatus.OK)
+        .json({ message: "All posts", posts, top });
     } catch (err) {
       return res
         .status(HttpStatus.INTERNAL_SERVER_ERROR)
@@ -110,17 +117,17 @@ module.exports = {
       });
   },
 
-    async GetPost(req, res) {
-        await Post.findOne({ _id: req.params.id })
-            .populate('user')
-            .populate('comments.userId')
-            .then(post => {
-                res.status(HttpStatus.OK).json({ message: 'Post found', post });
-            })
-            .catch(err =>
-                res
-                    .status(HttpStatus.NOT_FOUND)
-                    .json({ message: 'Post not found', post })
-            );
-    }
+  async GetPost(req, res) {
+    await Post.findOne({ _id: req.params.id })
+      .populate("user")
+      .populate("comments.userId")
+      .then(post => {
+        res.status(HttpStatus.OK).json({ message: "Post found", post });
+      })
+      .catch(err =>
+        res
+          .status(HttpStatus.NOT_FOUND)
+          .json({ message: "Post not found", post })
+      );
+  }
 };
