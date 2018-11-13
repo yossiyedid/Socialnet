@@ -23,6 +23,7 @@
     "core-js": "^2.5.4",
     "lodash": "^4.17.11",
     "materialize-css": "^1.0.0-rc.2",
+    "ngx-auto-scroll": "^1.1.0",
     "ngx-cookie-service": "^1.0.10",
     "rxjs": "~6.2.0",
     "socket.io-client": "^2.1.1",

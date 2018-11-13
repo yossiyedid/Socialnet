@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="col s12">
+    <div class="row">
+      <div class="card">
+        <div class="valign-wrapper" style="background: #64b5f6;">
+          <div class="col s12 imgCol">
+            <img src="http://placehold.it/50x50" class="circle">
+          </div>
+          <div class="row">
+            <div class="col s10 nameCol">
+              <span>{{reciver}}</span>
+              <p class="isOnline">Online</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12 rowDiv" ngx-auto-scroll lock-y-offset="10" observe-attributes>
+    <div class="row">
+      <div class="col s12">
+        <div class="message-wrapper" *ngFor="let message of messagesArr">
+          <div class="left" *ngIf="user.username !== reciver && user.username !== message.sendername">
+            <div class="chat-bubble left slide-left">
+              <div class="message">{{message.body}}</div>
+            </div>
+          </div>
+
+          <div class="right" *ngIf="user.username === message.sendername">
+            <div class="chat-bubble right slide-right">
+              <div class="message">{{message.body}}</div>
+            </div>
+          </div>
+
+          <div class="cf"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s12" style="margin: 0;">
+    <div class="row">
+      <div class="card" style="height: 55px;">
+        <div class="inputRow">
+          <form (ngSubmit)="sendMessage()">
+            <div class="input-field inputField col s10">
+              <textarea name="message" [(ngModel)]="message" class="materialize-textarea inputBox"></textarea>
+            </div>
+            <div class="input-field col s1 emojiDiv">
+              <button class="emojiBtn">Emoji</button>
+            </div>
+            <div class="input-field col s1">
+              <button class="suffix btn">Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
