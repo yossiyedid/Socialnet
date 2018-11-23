@@ -3,6 +3,7 @@ const HttpStatus = require("http-status-codes");
 const Message = require("../models/messageModels");
 const Conversation = require("../models/conversationModels");
 const User = require("../models/userModels");
+const Helper = require("../Helpers/helper");
 
 module.exports = {
   async GetAllMessages(req, res) {
@@ -30,7 +31,7 @@ module.exports = {
       });
       res
         .status(HttpStatus.OK)
-        .json({ message: "messages returned", messages });
+        .json({ message: "Messages returned", messages });
     }
   },
 
@@ -54,8 +55,8 @@ module.exports = {
       },
       async (err, result) => {
         if (result.length > 0) {
-         // const msg = await Message.findOne({ conversationId: result[0]._id });
-        //  Helper.updateChatList(req, msg);
+          const msg = await Message.findOne({ conversationId: result[0]._id });
+          Helper.updateChatList(req, msg);
           await Message.updateOne(
             {
               conversationId: result[0]._id
@@ -80,7 +81,7 @@ module.exports = {
             .catch(err =>
               res
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .json({ message: "Error occured" })
+                .json({ message: "Error occurred" })
             );
         } else {
           const newConversation = new Conversation();
@@ -99,7 +100,7 @@ module.exports = {
             senderId: req.user._id,
             reciverId: req.params.reciver_Id,
             sendername: req.user.username,
-            reciverName: req.body.reciverName,
+            recivername: req.body.reciverName,
             body: req.body.message
           });
 
@@ -124,7 +125,7 @@ module.exports = {
 
           await User.updateOne(
             {
-              _id: req.params.receiver_Id
+              _id: req.params.reciver_Id
             },
             {
               $push: {
@@ -149,10 +150,70 @@ module.exports = {
             .catch(err =>
               res
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .json({ message: "Error occured" })
+                .json({ message: "Error occurred" })
             );
         }
       }
     );
+  },
+
+  async MarkReciverMessages(req, res) {
+    const { sender, reciver } = req.params;
+    const msg = await Message.aggregate([
+      { $unwind: "$message" },
+      {
+        $match: {
+          $and: [
+            { "message.sendername": reciver, "message.recivername": sender }
+          ]
+        }
+      }
+    ]);
+
+    if (msg.length > 0) {
+      try {
+        msg.forEach(async value => {
+          await Message.updateOne(
+            {
+              "message._id": value.message._id
+            },
+            { $set: { "message.$.isRead": true } }
+          );
+        });
+        res.status(HttpStatus.OK).json({ message: "Messages maked as read" });
+      } catch (err) {
+        res
+          .status(HttpStatus.INTERNAL_SERVER_ERROR)
+          .json({ message: "Error occurred" });
+      }
+    }
+  },
+
+  async MarkAllMessages(req, res) {
+    const msg = await Message.aggregate([
+      { $match: { "message.recivername": req.user.username } },
+      { $unwind: "$message" }
+      // ,
+      // { $match: { "message.recivername": req.user.username } }
+    ]);
+    if (msg.length > 0) {
+      try {
+        msg.forEach(async value => {
+          await Message.updateOne(
+            {
+              "message._id": value.message._id
+            },
+            { $set: { "message.$.isRead": true } }
+          );
+        });
+        res
+          .status(HttpStatus.OK)
+          .json({ message: "All messages maked as read" });
+      } catch (err) {
+        res
+          .status(HttpStatus.INTERNAL_SERVER_ERROR)
+          .json({ message: "Error occurred" });
+      }
+    }
   }
 };

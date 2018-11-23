@@ -132,7 +132,7 @@ module.exports = {
   },
 
   async MarkAllNotifications(req, res) {
-    await User.update(
+    await User.updateOne(
       {
         _id: req.user._id
       },

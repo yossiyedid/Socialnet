@@ -21,4 +21,11 @@ export class MessageService {
   getAllMessages(senderId, reciverId): Observable<any> {
     return this.http.get(`${BASEURL}/chat-messages/${senderId}/${reciverId}`);
   }
+
+  markMessages(sender, reciver): Observable<any> {
+    return this.http.get(`${BASEURL}/reciver-messages/${sender}/${reciver}`);
+  }
+  markAllMessages(): Observable<any> {
+    return this.http.get(`${BASEURL}/mark-all-messages`);
+  }
 }
