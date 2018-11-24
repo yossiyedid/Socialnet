@@ -23,6 +23,7 @@
     "core-js": "^2.5.4",
     "lodash": "^4.17.11",
     "materialize-css": "^1.0.0-rc.2",
+    "moment": "^2.22.2",
     "ng2-emoji-picker": "^1.4.8",
     "ngx-auto-scroll": "^1.1.0",
     "ngx-cookie-service": "^1.0.10",

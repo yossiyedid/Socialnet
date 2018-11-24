@@ -1,17 +1,20 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import { TokenService } from '../../services/token.service';
 import { MessageService } from '../../services/message.service';
 import { ActivatedRoute } from '@angular/router';
 import { UsersService } from '../../services/users.service';
 import io from 'socket.io-client';
-import { CaretEvent, EmojiEvent, EmojiPickerOptions } from 'ng2-emoji-picker';
+import { CaretEvent, EmojiEvent } from 'ng2-emoji-picker';
+import _ from 'lodash';
 
 @Component({
   selector: 'app-message',
   templateUrl: './message.component.html',
   styleUrls: ['./message.component.css']
 })
-export class MessageComponent implements OnInit, AfterViewInit {
+export class MessageComponent implements OnInit, AfterViewInit, OnChanges {
+  @Input()
+  users;
   reciver: string;
   user: any;
   message: string;
@@ -20,6 +23,7 @@ export class MessageComponent implements OnInit, AfterViewInit {
   socket: any;
   typingMessage;
   typing = false;
+  isOnline = false ;
 
   public eventMock;
   public eventPosMock;
@@ -50,6 +54,7 @@ export class MessageComponent implements OnInit, AfterViewInit {
         this.getUserByUsername(this.reciver);
       });
     });
+
 
     this.socket.on('is_typing', data => {
       if (data.sender === this.reciver) {
@@ -135,5 +140,19 @@ export class MessageComponent implements OnInit, AfterViewInit {
 
   Toggled() {
     this.toggled = !this.toggled;
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    const title = document.querySelector('.nameCol');
+    if (changes.users.currentValue.length > 0) {
+      const result = _.indexOf(changes.users.currentValue, this.reciver);
+      if (result > -1) {
+        this.isOnline = true;
+        (title as HTMLElement).style.marginTop = '10px';
+      } else {
+        this.isOnline = false;
+        (title as HTMLElement).style.marginTop = '20px';
+      }
+    }
   }
 }

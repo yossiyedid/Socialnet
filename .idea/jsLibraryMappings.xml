@@ -3,7 +3,7 @@
   <component name="JavaScriptLibraryMappings">
     <file url="file://$PROJECT_DIR$/socialnet-backend" libraries="{socialnet/socialnet-backend/node_modules}" />
     <file url="file://$PROJECT_DIR$/socialnet-frontend" libraries="{socialnet/socialnet-frontend/node_modules}" />
-    <file url="PROJECT" libraries="{@types/angular, @types/express, @types/mongodb, @types/mongoose, socialnet/socialnet-backend/node_modules, socialnet/socialnet-frontend/node_modules}" />
+    <file url="PROJECT" libraries="{@types/angular, @types/express, @types/mongodb, @types/mongoose, animations.d.ts, socialnet/socialnet-backend/node_modules, socialnet/socialnet-frontend/node_modules}" />
     <includedPredefinedLibrary name="Node.js Core" />
   </component>
 </project>
