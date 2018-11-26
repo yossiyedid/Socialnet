@@ -32,6 +32,14 @@ const userSchema = mongoose.Schema({
       reciverId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
       msgId: { type: mongoose.Schema.Types.ObjectId, ref: "Message" }
     }
+  ],
+  picVersion: { type: String, default: "1543089257" },
+  picId: { type: String, default: "default.jpg" },
+  images: [
+    {
+      imgId: { type: String, default: "" },
+      imgVersion: { type: String, default: "" }
+    }
   ]
 });
 module.exports = mongoose.model("User", userSchema);

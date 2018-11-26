@@ -3,6 +3,7 @@ import { UsersService } from '../../services/users.service';
 import _ from 'lodash';
 import io from 'socket.io-client';
 import { TokenService } from '../../services/token.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-people',
@@ -16,7 +17,7 @@ export class PeopleComponent implements OnInit {
   userArr = [];
   onlineusers = [];
 
-  constructor(private userService: UsersService, private tokenService: TokenService) {
+  constructor(private userService: UsersService, private tokenService: TokenService, private router: Router) {
     this.socket = io('http://localhost:3000');
   }
 
@@ -58,8 +59,12 @@ export class PeopleComponent implements OnInit {
     this.onlineusers = event;
   }
 
-  checkIfOnline (name) {
-    const result = _.indexOf(this.onlineusers, name) ;
+  checkIfOnline(name) {
+    const result = _.indexOf(this.onlineusers, name);
     return result > -1;
+  }
+
+  viewUser(user) {
+    this.router.navigate([user.username]);
   }
 }

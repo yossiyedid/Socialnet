@@ -22,6 +22,7 @@ const posts = require('./routes/postRoutes');
 const users = require('./routes/userRoutes');
 const friends = require('./routes/friendsRoutes');
 const message = require('./routes/messageRoutes');
+const image = require('./routes/imageRoutes');
 
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
@@ -39,6 +40,7 @@ app.use('/api/socialnet', posts);
 app.use('/api/socialnet', users);
 app.use('/api/socialnet', friends);
 app.use('/api/socialnet', message);
+app.use('/api/socialnet', image);
 
 
 server.listen(3000, () => {

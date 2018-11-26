@@ -117,6 +117,7 @@ nav {
 .markAll {
   color: #ffffff;
   background: #64b5f6 !important;
+  border-radius: 90px;
 }
 
 li.dropdown-button {

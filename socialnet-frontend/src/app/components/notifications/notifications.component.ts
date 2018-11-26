@@ -31,6 +31,7 @@ export class NotificationsComponent implements OnInit {
     return this.usersService.getUserByName(this.user.username).subscribe(data => {
       this.notifications = data.result.notifications.reverse();
     });
+
   }
 
   timeFromNow(time) {

@@ -1,12 +1,12 @@
-import {AfterViewInit, Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {TokenService} from '../../services/token.service';
-import {Router} from '@angular/router';
+import { AfterViewInit, Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { TokenService } from '../../services/token.service';
+import { Router } from '@angular/router';
 import * as M from 'materialize-css';
-import {UsersService} from '../../services/users.service';
+import { UsersService } from '../../services/users.service';
 import * as moment from 'moment';
 import io from 'socket.io-client';
 import _ from 'lodash';
-import {MessageService} from '../../services/message.service';
+import { MessageService } from '../../services/message.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -21,6 +21,9 @@ export class ToolbarComponent implements OnInit, AfterViewInit {
   count = [];
   chatList = [];
   msgNumber = 0;
+  imageId: any;
+  imageVersion: any;
+  profileUrl : any;
 
   constructor(
     private tokenService: TokenService,
@@ -58,17 +61,19 @@ export class ToolbarComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.socket.on('usersOnline', data => {
-       this.onlineUsers.emit(data);
+      this.onlineUsers.emit(data);
     });
   }
 
   getUser() {
     this.usersService.getUserById(this.user._id).subscribe(
       data => {
-        // this.imageId = data.result.picId;
-     //   this.imageVersion = data.result.picVersion;
+        this.imageId = data.result.picId;
+        this.imageVersion = data.result.picVersion;
+        this.profileUrl = `https://res.cloudinary.com/mymessageimages/image/upload/v${this.imageVersion}/${this.imageId}`;
         this.notifications = data.result.notifications.reverse();
-        this.count = _.filter(this.notifications, ['read', false]);
+        const value = _.filter(this.notifications, ['read', false]);
+        this.count = value;
         this.chatList = data.result.chatList;
         this.checkIfRead(this.chatList);
       },
