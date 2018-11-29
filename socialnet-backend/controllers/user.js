@@ -1,4 +1,7 @@
 const User = require("../models/userModels");
+const moment = require("moment");
+const Joi = require("joi");
+const bcrypt = require("bcryptjs");
 
 const httpStatus = require("http-status-codes");
 
@@ -53,5 +56,82 @@ module.exports = {
       .catch(err => {
         res.status(httpStatus.INTERNAL_SERVER_ERROR).json({ message: err });
       });
+  },
+  async ProfileView(req, res) {
+    const dateValue = moment().format("YYYY-MM-DD");
+    await User.updateOne(
+      {
+        _id: req.body.id,
+        "notifications.date": { $ne: [dateValue, ""] },
+        "notifications.senderId": { $ne: req.user._id }
+      },
+      {
+        $push: {
+          notifications: {
+            senderId: req.user._id,
+            message: `${req.user.username} viewed your profile.`,
+            created: new Date(),
+            date: dateValue
+          }
+        }
+      }
+    )
+      .then(result => {
+        res
+          .status(httpStatus.OK)
+          .json({ message: "Notification sent", result });
+      })
+      .catch(err => {
+        res
+          .status(httpStatus.INTERNAL_SERVER_ERROR)
+          .json({ message: "Error occurred" });
+      });
+  },
+
+  async ChangePassword(req, res) {
+    const schema = Joi.object().keys({
+      cpassword: Joi.string().required(),
+      newPassword: Joi.string()
+        .min(5)
+        .required(),
+      confirmPassword: Joi.string()
+        .min(5)
+        .optional()
+    });
+
+    const { error, value } = Joi.validate(req.body, schema);
+    if (error && error.details) {
+      return res.status(httpStatus.BAD_REQUEST).json({ msg: error.details });
+    }
+
+    const user = await User.findOne({ _id: req.user._id });
+
+    return bcrypt.compare(value.cpassword, user.password).then(async result => {
+      if (!result) {
+        return res
+          .status(httpStatus.INTERNAL_SERVER_ERROR)
+          .json({ message: "Current password is incorrect" });
+      }
+
+      const newpassword = await User.EncryptPassword(req.body.newPassword);
+      await User.updateOne(
+        {
+          _id: req.user._id
+        },
+        {
+          password: newpassword
+        }
+      )
+        .then(() => {
+          res
+            .status(httpStatus.OK)
+            .json({ message: "Password changed successfully" });
+        })
+        .catch(err => {
+          res
+            .status(httpStatus.INTERNAL_SERVER_ERROR)
+            .json({ message: "Error occured" });
+        });
+    });
   }
 };

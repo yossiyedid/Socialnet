@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const bcrypt = require('bcryptjs');
 
 const userSchema = mongoose.Schema({
   username: { type: String },
@@ -40,6 +41,13 @@ const userSchema = mongoose.Schema({
       imgId: { type: String, default: "" },
       imgVersion: { type: String, default: "" }
     }
-  ]
+  ],
+    city: { type: String, default: "" },
+    country: { type: String, default: "" }
 });
+
+userSchema.statics.EncryptPassword = async function(password) {
+    return await bcrypt.hash(password, 10);
+};
+
 module.exports = mongoose.model("User", userSchema);

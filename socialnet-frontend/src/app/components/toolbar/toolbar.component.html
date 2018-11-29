@@ -7,7 +7,7 @@
           <i class="fa fa-globe fa-1x badge"></i>
           <span class="nav-label-icon circle" *ngIf="count.length > 0">{{count.length}}</span>
           <ul id='dropdown' class='dropdown-content col s12 collection'>
-            <li class="collection-item avatar" *ngFor="let data of notifications">
+            <li routerLink="/notifications" class="collection-item avatar" *ngFor="let data of notifications" >
               <img src="https://res.cloudinary.com/mymessageimages/image/upload/v{{data.senderId.picVersion}}/{{data.senderId.picId}}" class="circle">
               <span [ngClass]="data.read ? 'isRead' : 'unread' ">{{data.message}}</span>
               <p class="time">{{timeFromNow(data.created)}}</p>
@@ -59,7 +59,7 @@
     </div>
     <div class="nav-content">
       <div class="nav-div">
-        <img class="circle responsive-img"
+        <img *ngIf="imageId" class="circle responsive-img"
              src="https://res.cloudinary.com/mymessageimages/image/upload/v{{imageVersion}}/{{imageId}}">
       </div>
       <h1 class="profile-name">{{user.username}}</h1>
